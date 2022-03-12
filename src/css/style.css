@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Quicksand:wght@500&display=swap');
+
+:root {
+    --text-color: #f0f0f0;
+    --background-color: #202020;
+}
+
+
+
+/********************
+ * BODY
+ ********************/
+
+body {
+    margin: 0%;
+    background-color: var(--background-color); 
+}
+
+h1 {
+    font-size: 300%;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    font-family: 'Archivo', sans-serif;
+}
+
+h2, h3 {
+    color: var(--text-color);
+    font-family: 'Archivo', sans-serif;
+}
+
+p {
+    color: var(--text-color);
+
+}
+
+/* temporary part */
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+
+/********************
+ * SECTION
+ ********************/
