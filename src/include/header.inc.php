@@ -36,7 +36,6 @@
 	<header id="#top">
         <?php
             echo "<a href=\"index.php\"><img id=\"head-logo\" src=\"./images/spotifail.png\" height=\"50\" alt=\"Spotifail Logo\"/></a>\n"; 
-            echo "\t\t<p id=\"slogan\">La musique, sans l'écoute.</p>\n";
         ?>
         <nav>
 			<ul>

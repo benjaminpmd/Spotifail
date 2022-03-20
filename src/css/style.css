@@ -79,18 +79,8 @@ article {
     position: fixed;
     border-radius: 0;
     top: 1%;
-    left: 3.6%;
-    height: 100px;
-    user-select: none;
-    z-index: 1;
-  }
-
-  #slogan {
-    position: fixed;
-    border-radius: 0;
-    top: 11%;
     left: 1%;
-    cursor: default;
+    height: 10vh;
     user-select: none;
     z-index: 1;
   }
