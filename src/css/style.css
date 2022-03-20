@@ -3,6 +3,7 @@
 :root {
     --text-color: #f0f0f0;
     --background-color: #202020;
+    --font: 'Archivo', sans-serif;
 }
 
 
@@ -12,38 +13,78 @@
  ********************/
 
 body {
+    padding: 0;
     margin: 0%;
     background-color: var(--background-color); 
+    color: var(--text-color);
+    text-align: center;
 }
 
 h1 {
     font-size: 300%;
     letter-spacing: 1px;
     color: var(--text-color);
-    font-family: 'Archivo', sans-serif;
+    font-family: var(--font);
 }
 
 h2, h3 {
     color: var(--text-color);
-    font-family: 'Archivo', sans-serif;
+    font-family: var(--font);
 }
 
 p {
     color: var(--text-color);
-
-}
-
-/* temporary part */
-main {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    align-items: center;
-    justify-content: center;
+    font-family: var(--font);
 }
 
 /********************
- * SECTION
+ * IMAGES
  ********************/
+
+img {
+    border-radius: 20px;
+    max-width: 60%;
+}
+
+figcaption {
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
+/********************
+ * SECTION & ARTICLES
+ ********************/
+
+section {
+    width: 100%;
+    align-content: center;
+}
+
+article {
+    width: 80%;
+    text-align: left;
+}
+
+
+
+/********************
+ * FOOTER
+ ********************/
+
+footer {
+    text-align: center;
+    background-color: black;
+    margin-bottom: 0;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer li, footer a {
+    color: var(--text-color);
+    font-family: var(--font);
+    margin: 1%;
+}

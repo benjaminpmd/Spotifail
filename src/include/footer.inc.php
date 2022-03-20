@@ -1,6 +1,6 @@
 	<footer>
 		<ul>
-		<li><a href="">Plan du site</a></li>
+			<li><a href="">Plan du site</a></li>
 			<li>Lucas L &amp; Benjamin P</li>
 			<li>UE Développement Web</li>
 			<li>Cergy Paris Université</li>
