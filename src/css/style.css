@@ -21,6 +21,7 @@ body {
 }
 
 h1 {
+    user-select: none;
     font-size: 300%;
     letter-spacing: 1px;
     color: var(--text-color);
@@ -49,6 +50,7 @@ img {
 figcaption {
     color: var(--text-color);
     font-family: var(--font);
+    margin: 1% 0% 1%;
 }
 
 /********************
@@ -56,16 +58,42 @@ figcaption {
  ********************/
 
 section {
-    width: 100%;
+    display: block;
     align-content: center;
 }
 
 article {
-    width: 80%;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    text-align: center;
+    margin: 2% 20% 2%;
 }
 
+/******************************
+ * HEADER
+ ******************************/
 
+
+ #head-logo {
+    position: fixed;
+    border-radius: 0;
+    top: 1%;
+    left: 3.6%;
+    height: 100px;
+    user-select: none;
+    z-index: 1;
+  }
+
+  #slogan {
+    position: fixed;
+    border-radius: 0;
+    top: 11%;
+    left: 1%;
+    cursor: default;
+    user-select: none;
+    z-index: 1;
+  }
 
 /********************
  * FOOTER
