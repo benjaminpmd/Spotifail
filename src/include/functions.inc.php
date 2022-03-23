@@ -27,10 +27,10 @@ function get_nasa_daily_image(): array {
     $res_array = json_decode($res, true);
 
     return [
-        "url" => $res_array["url"],
-        "title" => $res_array["title"],
-        "explanation" => $res_array["explanation"],
-        "copyright" => $res_array["copyright"]
+        "url" => $res_array->url,
+        "title" => $res_array->title,
+        "explanation" => $res_array->explanation,
+        "copyright" => $res_array->copyright
     ];
 }
 
