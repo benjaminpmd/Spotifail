@@ -7,9 +7,12 @@
 ?>
     <main>
         <section>
-            <h2>L'image du jour</h2>
+            <h2>La musique, sans l'écoute</h2>
             <article>
-                <h3>Un peu d'espace</h3>
+                <h3>Qu'est ce que Spotifail ?</h3>
+                <p>Chez Spotifail, pas d'écoute, mais beaucoup d'infos ! Vous pouvez retrouver ici toutes les informations
+                    sur vos musiques et chansons préférées, ainsi que des statistiques sur les chansons et les artistes 
+                    les plus écoutés, tout cela mis à jour régulièrement !</p>
             </article>
         </section>
     </main>

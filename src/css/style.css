@@ -28,7 +28,7 @@ h1 {
     font-family: var(--font);
 }
 
-h2, h3 {
+h2, h3, h4 {
     color: var(--text-color);
     font-family: var(--font);
 }

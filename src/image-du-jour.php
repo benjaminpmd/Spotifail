@@ -1,5 +1,5 @@
 <?php
-    $page_title = "Spotifail";
+    $page_title = "L'image du jour";
     $page_date = "20/03/22";
 
     include "./include/header.inc.php";
@@ -22,7 +22,7 @@
                         echo "\t\t\t\t\t<figcaption>".$apod_res["title"]."</figcaption>\n";
                     }
                     echo "\t\t\t\t</figure>\n";
-                    echo "\t\t\t\t<h4>Une petite explication</h4>\n";
+                    echo "\t\t\t\t<h4>Une petite explication (en anglais)</h4>\n";
                     echo "\t\t\t\t<p>".$apod_res["explanation"]."</p>\n";
                 ?>
             </article>

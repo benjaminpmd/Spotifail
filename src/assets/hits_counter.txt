@@ -1,4 +1,2 @@
 index:0
 image-du-jour:0
-foo:5
-bar:9
