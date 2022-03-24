@@ -26,12 +26,23 @@ function get_nasa_daily_image(): array {
     // decode the JSON string
     $res_array = json_decode($res, true);
 
-    return [
-        "url" => $res_array->url,
-        "title" => $res_array->title,
-        "explanation" => $res_array->explanation,
-        "copyright" => $res_array->copyright
-    ];
+    if (!empty($res_array->copyright)) {
+        $return_array = [
+            "url" => $res_array->url,
+            "title" => $res_array->title,
+            "explanation" => $res_array->explanation,
+            "copyright" => $res_array->copyright
+        ];
+    } 
+    else {
+        $return_array = [
+            "url" => $res_array->url,
+            "title" => $res_array->title,
+            "explanation" => $res_array->explanation,
+        ];
+    }
+
+    return $return_array;
 }
 
 /**
