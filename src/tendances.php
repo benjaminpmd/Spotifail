@@ -1,5 +1,5 @@
 <?php
-    $page_title = "Statistiques";
+    $page_title = "Tendances";
     $page_date = "23/03/22";
 
     include "./include/header.inc.php";
@@ -7,7 +7,7 @@
 ?>
     <main>
         <section>
-            <h2>Fréquentation du site</h2>
+            <h2>Top Tendances</h2>
         </section>
     </main>
 <?php

@@ -16,7 +16,7 @@
                     echo "<figure>\n";
                     echo "\t\t\t\t\t<img src=\"".$apod_res["url"]."\" alt=\"".$apod_res["title"]."\" />\n";
                     if (isset($apod_res["copyright"])) {
-                        echo "\t\t\t\t\t<figcaption>".$apod_res["title"].PHP_EOL."copyright : ".$apod_res["copyright"]."</figcaption>\n";
+                        echo "\t\t\t\t\t<figcaption>".$apod_res["title"]." | Copyright : ".$apod_res["copyright"]."</figcaption>\n";
                     }
                     else {
                         echo "\t\t\t\t\t<figcaption>".$apod_res["title"]."</figcaption>\n";
