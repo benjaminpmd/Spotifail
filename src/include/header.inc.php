@@ -45,7 +45,11 @@
                 <li class="nav-item"><a class="nav-link" href="./tendances.php">Tendances</a></li>
                 <li class="nav-item"><a class="nav-link" href="./image-du-jour.php">L'image du jour</a></li>
 			</ul>	
+            <form action="recherche.php">
+                <input type="text" placeholder="Search.." name="q">
+            </form>
 		</nav>
+
         <?php
             if (isset($page_title)) {
                 echo "\t<h1>".$page_title."</h1>\n";

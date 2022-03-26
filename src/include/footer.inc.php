@@ -10,7 +10,7 @@
 			<tbody>			
 				<tr>
 					<td class="footer-item">Projet de Dev Web 2022</td>
-					<td class="footer-item">Github</td>
+					<td class="footer-item"><a target="_blank" href="" class="footer-link"><img src="./images/github.png" alt="github log" height="20"/> Github</a></td>
 					<td class="footer-item">Plan du site</td>
 				</tr>
 				<tr>

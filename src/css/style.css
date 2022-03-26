@@ -141,17 +141,25 @@ footer table {
     margin: 0;
     padding: 1%;
     table-layout: fixed;
+    vertical-align: middle;
 }
 
 .footer-title {
     padding: 1%;
     color: var(--text-color);
     font-family: var(--font);
-
+    vertical-align: middle;
 }
-
 
 .footer-item {
     color: var(--text-color);
     font-family: var(--font);
+    vertical-align: middle;
+}
+
+.footer-link {
+    color: var(--text-color);
+    font-family: var(--font);
+    text-decoration: none;
+    vertical-align: middle;
 }

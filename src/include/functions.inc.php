@@ -220,6 +220,31 @@ function get_top_artists(): array {
  * 
  ********************/
 
+/**
+ * Function to get an array of albums with names similar to the query.
+ * 
+ * @param query a string corresponding to the name of an album.
+ * @return array object containing the name, the listeners numbers and other informations of the similar albums.
+ */
+function search_album(string $query): array {
+
+    $url = "https://ws.audioscrobbler.com/2.0/?method=album.search&format=json&api_key=".API_KEY."&album=".$query;
+    // init curl
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // execute the request
+    $res = curl_exec($ch);
+    curl_error($ch);
+    
+    // close the request
+    curl_close($ch);
+    
+    $decoded_json = json_decode($res);
+    
+    return $decoded_json->results->albummatches->album;
+}
 
 
 
@@ -230,4 +255,82 @@ function get_top_artists(): array {
  * TODO: code the functions
  * 
  ********************/
+
+/**
+ * Function to get an array of tracks with the tag researched.
+ * 
+ * @param query a string corresponding to a tag.
+ * @return array object containing the name, the listeners numbers and other informations of the most popular tracks with the searched tag.
+ */
+function get_top_tracks_by_tag(string $query): array {
+
+    $url = "https://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&format=json&api_key=".API_KEY."&tag=".$query;
+    // init curl
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // execute the request
+    $res = curl_exec($ch);
+    curl_error($ch);
+    
+    // close the request
+    curl_close($ch);
+    
+    $decoded_json = json_decode($res);
+    
+    return $decoded_json->results->tracks->track;
+}
+
+/**
+ * Function to get an array of artists with the tag researched.
+ * 
+ * @param query a string corresponding to a tag.
+ * @return array object containing the name, the listeners numbers and other informations of the most popular artists with the searched tag.
+ */
+function get_top_artists_by_tag(string $query): array {
+
+    $url = "https://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&format=json&api_key=".API_KEY."&tag=".$query;
+    // init curl
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // execute the request
+    $res = curl_exec($ch);
+    curl_error($ch);
+    
+    // close the request
+    curl_close($ch);
+    
+    $decoded_json = json_decode($res);
+    
+    return $decoded_json->results->topartists->artist;
+}
+
+/**
+ * Function to get an array of album with the tag researched.
+ * 
+ * @param query a string corresponding to a tag.
+ * @return array object containing the name, the listeners numbers and other informations of the most popular albums with the searched tag.
+ */
+function get_top_albums_by_tag(string $query): array {
+
+    $url = "https://ws.audioscrobbler.com/2.0/?method=tag.gettopalbums&format=json&api_key=".API_KEY."&tag=".$query;
+    // init curl
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // execute the request
+    $res = curl_exec($ch);
+    curl_error($ch);
+    
+    // close the request
+    curl_close($ch);
+    
+    $decoded_json = json_decode($res);
+    
+    return $decoded_json->results->albums->album;
+}
 ?>
