@@ -101,6 +101,8 @@ function get_geolocation(): array {
  */
 function search_track(string $query): array {
 
+    $query = str_replace(" ", "+", $query);
+
     $url = "https://ws.audioscrobbler.com/2.0/?method=track.search&format=json&api_key=".API_KEY."&track=".$query;
     
     // init curl
@@ -165,6 +167,8 @@ function get_top_tracks(): array {
  */
 function search_artist(string $query): array {
 
+    $query = str_replace(" ", "+", $query);
+
     $url = "https://ws.audioscrobbler.com/2.0/?method=artist.search&format=json&api_key=".API_KEY."&artist=".$query;
     // init curl
     $ch = curl_init();
@@ -226,6 +230,8 @@ function get_top_artists(): array {
  * @return array object containing the name, the listeners numbers and other informations of the similar albums.
  */
 function search_album(string $query): array {
+
+    $query = str_replace(" ", "+", $query);
 
     $url = "https://ws.audioscrobbler.com/2.0/?method=album.search&format=json&api_key=".API_KEY."&album=".$query;
     // init curl
