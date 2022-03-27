@@ -31,10 +31,10 @@
                 <?php
                     $geoloc_res = get_geolocation();
                     if ($geoloc_res["city"] == "") {
-                        echo "<p>Votre adresse IP indique que vous êtes situé en ".$geoloc_res["countryName"]."</p>\n";
+                        echo "<p>Votre adresse IP indique que vous êtes situé.e en ".$geoloc_res["countryName"]."</p>\n";
                     }
                     else {
-                        echo "<p>Votre adresse IP indique que vous êtes situé près de ".$geoloc_res["city"]." en ".$geoloc_res["countryName"]."</p>\n";
+                        echo "<p>Votre adresse IP indique que vous êtes situé.e près de ".$geoloc_res["city"]." en ".$geoloc_res["countryName"]."</p>\n";
                     }
                 ?>
             </article>

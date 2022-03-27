@@ -23,6 +23,12 @@
         else echo "\t<meta name=\"date\" content=\"".$DEFAULT_DATE."\" />\n";
     ?>
 	<meta name="lieu" content="CY Cergy Paris Université" />
+    <meta property="og:locale" content="fr_FR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Spotifail" />
+	<meta property="og:description" content="La musique, sans l'écoute" />
+	<meta property="og:url" content="https://spotifail.benjaminp.dev" />
+	<meta property="og:site_name" content="Spotifail" />
     <?php
         # Title of the page
         if(isset($page_title)) {
@@ -41,19 +47,22 @@
         <nav>
 			<ul>
                 <li class="nav-item"><a class="nav-link" href="./index.php"><img id="header-logo" src="./images/spotifail.png" height="50" alt="Spotifail Logo"/></a></li>
-                <li class="nav-item"><a class="nav-link" href="./index.php">Acceuil</a></li>
+                <li class="nav-item"><a class="nav-link" href="./index.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="./tendances.php">Tendances</a></li>
                 <li class="nav-item"><a class="nav-link" href="./image-du-jour.php">L'image du jour</a></li>
 			</ul>	
             <form action="recherche.php">
-                <input type="text" placeholder="Search.." name="q">
+                <input type="text" placeholder="Search.." name="q" />
+                <input type="hidden" name="track" value="on" />
+                <input type="hidden" name="artist" value="on" />
+                <input type="hidden" name="album" value="on" />
+                <input type="hidden" name="tag" value="on" />
             </form>
 		</nav>
-
         <?php
             if (isset($page_title)) {
-                echo "\t<h1>".$page_title."</h1>\n";
+                echo "<h1>".$page_title."</h1>\n";
             }
-            else echo "\t<h1>Spotifail</h1>\n";
+            else echo "<h1>Spotifail</h1>\n";
         ?>
     </header>
