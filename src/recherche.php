@@ -87,7 +87,7 @@
                     echo "\t\t\t<article>\n";
                     echo "\t\t\t\t<h3>Albums</h3>\n";
                     echo "\t\t\t\t<ul class=\"result-list\">\n";
-                    $tracks = search_track($_GET["q"]);
+                    $tracks = search_album($_GET["q"]);
                     foreach ($tracks as $value) {
                         echo "\t\t\t\t\t<li><table class=\"search-result-item\"><tr>";
                         echo "<td>".$value->name."</td>";
