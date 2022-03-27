@@ -74,9 +74,23 @@ article {
     margin: 2% 20% 2%;
 }
 
-/******************************
+/********************
+ * SECTION & ARTICLES
+ ********************/
+
+form {
+    font-family: var(--font);
+    color: var(--text-color);
+}
+
+fieldset {
+    border-radius: 20px;
+    color: var(--text-color)
+}
+
+/********************
  * HEADER
- ******************************/
+ ********************/
 
 header nav {
     display: flex;
@@ -162,4 +176,58 @@ footer table {
     font-family: var(--font);
     text-decoration: none;
     vertical-align: middle;
+}
+
+/********************
+ * PLAN
+ ********************/
+
+.plan-item {
+   list-style-type: none;
+   padding: 1%;
+   text-align: left;
+   margin-left: 30%;
+}
+
+.plan-item a {
+   color: var(--text-color);
+   font-family: var(--font);
+   text-decoration: none;
+   transition: 0.5s;
+}
+
+.plan-item a:hover{
+   color: rgb(255, 0, 0);
+   transition: 0.5s;
+}
+
+/********************
+ * SEARCH RESULTS
+ ********************/
+
+.result-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;  
+}
+
+.result-list li {
+    background-color: black; 
+    padding: 1%;
+    margin: 1%;
+    border-radius: 20px;
+}
+
+.search-result-item {
+    width: 100%;
+    margin: 0;
+    padding: 1%;
+    table-layout: fixed;
+    vertical-align: middle;
+}
+
+.search-result-item td {
+    font-family: var(--font);
+    margin: 5%;
+    text-align: start;
 }

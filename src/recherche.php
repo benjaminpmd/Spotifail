@@ -20,9 +20,7 @@
                             }
                             else echo "<input type=\"text\" placeholder=\"Musique, artiste...\" name=\"q\" />\n";
                         ?>
-
                         <input type="submit" value="Rechercher" />
-
                         <?php
                             if (isset($_GET["artist"]) || !isset($_GET["q"])) {
                                 echo "<input type=\"checkbox\" name=\"track\" id=\"track-search\" checked=\"checked\" />\n";
@@ -30,7 +28,6 @@
                             else echo "<input type=\"checkbox\" name=\"track\" id=\"track-search\" />\n";
                         ?>
                         <label for="track-search">Musiques</label>
-
                         <?php
                             if (isset($_GET["artist"]) || !isset($_GET["q"])) {
                                 echo "<input type=\"checkbox\" name=\"artist\" id=\"artist-search\" checked=\"checked\" />\n";
@@ -38,22 +35,13 @@
                             else echo "<input type=\"checkbox\" name=\"artist\" id=\"artist-search\" />\n";
                         ?>
                         <label for="artist-search">Artistes</label>
-
                         <?php
                             if (isset($_GET["album"]) || !isset($_GET["q"])) {
                                 echo "<input type=\"checkbox\" name=\"album\" id=\"album-search\" checked=\"checked\" />\n";
                             }
                             else echo "<input type=\"checkbox\" name=\"album\" id=\"album-search\" />\n";
                         ?>
-                        <label for="album-search">Albums :</label>
-
-                        <?php
-                            if (isset($_GET["tag"]) || !isset($_GET["q"])) {
-                                echo "<input type=\"checkbox\" name=\"tag\" id=\"tag-search\" checked=\"checked\" />\n";
-                            }
-                            else echo "<input type=\"checkbox\" name=\"tag\" id=\"tag-search\" />\n";
-                        ?>
-                        <label for="tag-search">Tags</label>
+                        <label for="album-search">Albums</label>
                     </fieldset>
                 </form>
             </article>
@@ -61,8 +49,56 @@
         <?php
             if (isset($_GET["q"])) {
                 echo "<section>\n";
+                echo "\t\t\t<h2>Recherche pour ".$_GET["q"]."</h2>\n";
+                
+                if (isset($_GET["track"])) {
+                    echo "\t\t\t<article>\n";
+                    echo "\t\t\t\t<h3>Musiques</h3>\n";
+                    echo "\t\t\t\t<ul class=\"result-list\">\n";
+                    $tracks = search_track($_GET["q"]);
+                    foreach ($tracks as $value) {
+                        echo "\t\t\t\t\t<li><table class=\"search-result-item\"><tr>";
+                        echo "<td>".$value->name."</td>";
+                        echo "<td>"."Artiste : ".$value->artist."</td>";
+                        echo "<td>"."<input type=\"submit\" value=\"En savoir plus\">"."</td>";
+                        echo "</tr></table></li>\n";
+                    }
+                    echo "\t\t\t\t</ul>\n";
+                    echo "\t\t\t</article>\n";
+                }
 
-                echo "\tRecherche pour ".$_GET["q"]."\n";
+                if (isset($_GET["artist"])) {
+                    echo "\t\t\t<article>\n";
+                    echo "\t\t\t\t<h3>Artistes</h3>\n";
+                    echo "\t\t\t\t<ul class=\"result-list\">\n";
+                    $artists = search_artist($_GET["q"]);
+                    foreach ($artists as $value) {
+                        echo "\t\t\t\t\t<li><table class=\"search-result-item\"><tr>";
+                        echo "<td>".$value->name."</td>";
+                        echo "<td>"."Écoutes : ".$value->listeners."</td>";
+                        echo "<td>"."<input type=\"submit\" value=\"En savoir plus\">"."</td>";
+                        echo "</tr></table></li>\n";
+                    }
+                    echo "\t\t\t\t</ul>\n";
+                    echo "\t\t\t</article>\n";
+                }
+
+                if (isset($_GET["album"])) {
+                    echo "\t\t\t<article>\n";
+                    echo "\t\t\t\t<h3>Albums</h3>\n";
+                    echo "\t\t\t\t<ul class=\"result-list\">\n";
+                    $tracks = search_track($_GET["q"]);
+                    foreach ($tracks as $value) {
+                        echo "\t\t\t\t\t<li><table class=\"search-result-item\"><tr>";
+                        echo "<td>".$value->name."</td>";
+                        echo "<td>"."Artiste : ".$value->artist."</td>";
+                        echo "<td>"."<input type=\"submit\" value=\"En savoir plus\">"."</td>";
+                        echo "</tr></table></li>\n";
+                    }
+                    echo "\t\t\t\t</ul>\n";
+                    echo "\t\t\t</article>\n";
+                }
+                echo "\t\t</section>\n";
             }
         ?>
     </main>

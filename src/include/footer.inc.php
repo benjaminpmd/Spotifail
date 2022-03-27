@@ -21,10 +21,15 @@
 				<tr>
 					<td class="footer-item">Lucas L. &amp; Benjamin P.</td>
 					<td class="footer-item"></td>
-					<td class="footer-item"><a href="./tendances.php" class="footer-link">Tendances</a></td>
+					<td class="footer-item"><a href="./recherche.php" class="footer-link">Recherche</a></td>
 				</tr>
 				<tr>
 					<td class="footer-item">CY Cergy Paris Université</td>
+					<td class="footer-item"></td>
+					<td class="footer-item"><a href="./tendances.php" class="footer-link">Tendances</a></td>
+				</tr>
+				<tr>
+					<td class="footer-item"></td>
 					<td class="footer-item"></td>
 					<td class="footer-item"><a href="./image-du-jour.php" class="footer-link">L'image du jour</a></td>
 				</tr>
