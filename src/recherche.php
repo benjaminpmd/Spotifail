@@ -22,7 +22,7 @@
                         ?>
                         <input type="submit" value="Rechercher" />
                         <?php
-                            if (isset($_GET["artist"]) || !isset($_GET["q"])) {
+                            if (isset($_GET["track"]) || !isset($_GET["q"])) {
                                 echo "<input type=\"checkbox\" name=\"track\" id=\"track-search\" checked=\"checked\" />\n";
                             }
                             else echo "<input type=\"checkbox\" name=\"track\" id=\"track-search\" />\n";

@@ -50,7 +50,14 @@
                 <li class="nav-item"><a class="nav-link" href="./index.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="./tendances.php">Tendances</a></li>
                 <li class="nav-item"><a class="nav-link" href="./image-du-jour.php">L'image du jour</a></li>
-			</ul>	
+			</ul>
+            <form action="recherche.php">
+                <input type="text" placeholder="Musique, Artiste..." name="q" />
+                <input type="hidden" name="track" value="on" />
+                <input type="hidden" name="artist" value="on" />
+                <input type="hidden" name="album" value="on" />
+                <input type="hidden" name="tag" value="on" />
+            </form>	
 		</nav>
         <?php
             if (isset($page_title)) {

@@ -183,7 +183,6 @@ function search_artist(string $query): array {
     return $decoded_json->results->artistmatches->artist;
 }
 
-
 /**
  * Function to get array of the most weekly played artists.
  * 
