@@ -1,6 +1,0 @@
-index.php:28
-plan.php:5
-recherche.php:2
-tendances.php:1
-image-du-jour.php:2
-statistiques.php:1

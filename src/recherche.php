@@ -13,12 +13,12 @@
                 <form>
                     <fieldset>
                         <legend>Une envie ? Allez y !</legend>
-                        <label for="q">Termes à rechercher :</label>
+                        <label for="q">Rechercher :</label>
                         <?php
                             if (isset($_GET["q"])) {
-                                echo "<input type=\"text\" placeholder=\"Musique, artiste...\" name=\"q\" value=\"".$_GET["q"]."\" />\n";
+                                echo "<input type=\"text\" placeholder=\"Titre, artiste...\" name=\"q\" value=\"".$_GET["q"]."\" />\n";
                             }
-                            else echo "<input type=\"text\" placeholder=\"Musique, artiste...\" name=\"q\" />\n";
+                            else echo "<input type=\"text\" placeholder=\"Titre, artiste...\" name=\"q\" />\n";
                         ?>
                         <input type="submit" value="Rechercher" />
                         <?php
@@ -27,7 +27,7 @@
                             }
                             else echo "<input type=\"checkbox\" name=\"track\" id=\"track-search\" />\n";
                         ?>
-                        <label for="track-search">Musiques</label>
+                        <label for="track-search">Titres</label>
                         <?php
                             if (isset($_GET["artist"]) || !isset($_GET["q"])) {
                                 echo "<input type=\"checkbox\" name=\"artist\" id=\"artist-search\" checked=\"checked\" />\n";
@@ -47,58 +47,57 @@
             </article>
         </section>
         <?php
-            if (isset($_GET["q"])) {
-                echo "<section>\n";
-                echo "\t\t\t<h2>Recherche pour ".$_GET["q"]."</h2>\n";
-                
+            if (isset($_GET["q"]) && !empty($_GET["q"])) {                
                 if (isset($_GET["track"])) {
-                    echo "\t\t\t<article>\n";
-                    echo "\t\t\t\t<h3>Musiques</h3>\n";
-                    echo "\t\t\t\t<ul class=\"result-list\">\n";
                     $tracks = search_track($_GET["q"]);
+
+                    echo "<section class=\"card-section\">\n";
+                    echo "<h2>Titres correspondants à ".$_GET["q"]."</h2>\n";
+                    
                     foreach ($tracks as $value) {
-                        echo "\t\t\t\t\t<li><table class=\"search-result-item\"><tr>";
-                        echo "<td>".$value->name."</td>";
-                        echo "<td>"."Artiste : ".$value->artist."</td>";
-                        echo "<td>"."<input type=\"submit\" value=\"En savoir plus\">"."</td>";
-                        echo "</tr></table></li>\n";
+                        echo "<article class=\"card\">\n";
+                        echo "<h3>".$value["name"]."</h3>\n";
+                        echo "<p>"."Artiste : ".$value["artist"]."</p>\n";
+                        echo "<a href=\"./details.php?type=track&name=".$value["name"]."&artist=".$value["artist"]."\">Découvrir</a>\n";
+                        echo "</article>\n";
                     }
-                    echo "\t\t\t\t</ul>\n";
-                    echo "\t\t\t</article>\n";
+
+                    echo "</section>\n";
                 }
 
                 if (isset($_GET["artist"])) {
-                    echo "\t\t\t<article>\n";
-                    echo "\t\t\t\t<h3>Artistes</h3>\n";
-                    echo "\t\t\t\t<ul class=\"result-list\">\n";
                     $artists = search_artist($_GET["q"]);
+
+                    echo "<section class=\"card-section\">\n";
+                    echo "<h2>Artistes correspondants à ".$_GET["q"]."</h2>\n";
+                    
                     foreach ($artists as $value) {
-                        echo "\t\t\t\t\t<li><table class=\"search-result-item\"><tr>";
-                        echo "<td>".$value->name."</td>";
-                        echo "<td>"."Écoutes : ".$value->listeners."</td>";
-                        echo "<td>"."<input type=\"submit\" value=\"En savoir plus\">"."</td>";
-                        echo "</tr></table></li>\n";
+                        echo "<article class=\"card\">\n";
+                        echo "<h3>".$value["name"]."</h3>\n";
+                        echo "<p>"."Écoutes : ".$value["listeners"]."</p>\n";
+                        echo "<a href=\"./details.php?type=artist&name=".$value["name"]."\">Découvrir</a>\n";
+                        echo "</article>\n";
                     }
-                    echo "\t\t\t\t</ul>\n";
-                    echo "\t\t\t</article>\n";
+
+                    echo "</section>\n";
                 }
 
                 if (isset($_GET["album"])) {
-                    echo "\t\t\t<article>\n";
-                    echo "\t\t\t\t<h3>Albums</h3>\n";
-                    echo "\t\t\t\t<ul class=\"result-list\">\n";
-                    $tracks = search_album($_GET["q"]);
-                    foreach ($tracks as $value) {
-                        echo "\t\t\t\t\t<li><table class=\"search-result-item\"><tr>";
-                        echo "<td>".$value->name."</td>";
-                        echo "<td>"."Artiste : ".$value->artist."</td>";
-                        echo "<td>"."<input type=\"submit\" value=\"En savoir plus\">"."</td>";
-                        echo "</tr></table></li>\n";
+                    $albums = search_album($_GET["q"]);
+
+                    echo "<section class=\"card-section\">\n";
+                    echo "<h2>Albums correspondants à ".$_GET["q"]."</h2>\n";
+
+                    foreach ($albums as $value) {
+                        echo "<article class=\"card\">\n";
+                        echo "<h3>".$value["name"]."</h3>\n";
+                        echo "<p>"."Artiste : ".$value["artist"]."</p>\n";
+                        echo "<a href=\"./details.php?type=album&name=".$value["name"]."\">Découvrir</a>\n";
+                        echo "</article>\n";
                     }
-                    echo "\t\t\t\t</ul>\n";
-                    echo "\t\t\t</article>\n";
+
+                    echo "</section>\n";
                 }
-                echo "\t\t</section>\n";
             }
         ?>
     </main>

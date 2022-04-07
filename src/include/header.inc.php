@@ -1,6 +1,7 @@
 <?php
     declare(strict_types=1);
     include_once "./include/util.inc.php";
+    $theme = get_theme_link();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -49,15 +50,17 @@
                 <li class="nav-item"><a class="nav-link" href="./index.php"><img id="header-logo" src="./images/spotifail.png" height="50" alt="Spotifail Logo"/></a></li>
                 <li class="nav-item"><a class="nav-link" href="./index.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="./tendances.php">Tendances</a></li>
-                <li class="nav-item"><a class="nav-link" href="./image-du-jour.php">L'image du jour</a></li>
+                <li class="nav-item"><a class="nav-link" href="./recherche.php">Recherche</a></li>
 			</ul>
-            <form action="recherche.php">
-                <input type="text" placeholder="Musique, Artiste..." name="q" />
+            <form action="recherche.php" id="quick-search">
+                <input type="text" placeholder=" Titre, Artiste..." name="q" size="40" />
+                <input type="image" name="submit" src="./images/search.png" alt="rechercher"/>
                 <input type="hidden" name="track" value="on" />
                 <input type="hidden" name="artist" value="on" />
                 <input type="hidden" name="album" value="on" />
                 <input type="hidden" name="tag" value="on" />
-            </form>	
+            </form>
+            <a href="?theme=<?php echo $theme?>" id="theme-link"><img src="./images/<?php echo $theme?>.png" alt="changez le theme ici" id="theme-icon"/></a>
 		</nav>
         <?php
             if (isset($page_title)) {

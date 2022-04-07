@@ -10,13 +10,43 @@ define("DEFAULT_DATE", "unkown");
 function get_stylesheet_path(): string {
 	if (isset($_GET["theme"])) {
 		if ($_GET["theme"] == "light") {
+			setcookie("theme", "light");
+			return "./css/light.css";
+		}
+		else {
+			setcookie("theme", "dark");
 			return "./css/style.css";
+		}
+	}
+	else {
+		if (isset($_COOKIE["theme"]) && $_COOKIE["theme"] == "light") {
+			return "./css/light.css";
 		}
 		else {
 			return "./css/style.css";
 		}
 	}
 	return "./css/style.css";
+}
+
+function get_theme_link(): string {
+	if (isset($_GET["theme"])) {
+		if ($_GET["theme"] == "light") {
+			return "dark";
+		}
+		else {
+			return "light";
+		}
+	}
+	else {
+		if (isset($_COOKIE["theme"]) && $_COOKIE["theme"] == "light") {
+			return "dark";
+		}
+		else {
+			return "light";
+		}
+	}
+	return "dark";
 }
 
 

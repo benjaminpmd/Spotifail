@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap');
 
 :root {
-    --text-color: #f0f0f0;
-    --background-color: #202020;
-    --card-background: #2c2c2c;
+    --text-color: #1f1f1f;
+    --background-color: #f4f4f4;
+    --card-background: #cfcfcf;
     --font: 'Archivo', sans-serif;
 }
 

@@ -15,12 +15,7 @@
 				</tr>
 				<tr>
 					<td class="footer-item">25 Mars 2022</td>
-					<td class="footer-item">
-					<?php
-						$page_name = basename($_SERVER['PHP_SELF']);
-						echo "Chargements de la page : ".increment_hit_counter($page_name);
-					?>
-					</td>
+					<td class="footer-item"></td>
 					<td class="footer-item"><a href="./index.php" class="footer-link">Accueil</a></td>
 				</tr>
 				<tr>
@@ -30,7 +25,12 @@
 				</tr>
 				<tr>
 					<td class="footer-item">CY Cergy Paris Université</td>
-					<td class="footer-item"></td>
+					<td class="footer-item">
+					<?php
+						$page_name = basename($_SERVER['PHP_SELF']);
+						echo "Chargements de la page : ".increment_hit_counter($page_name);
+					?>
+					</td>
 					<td class="footer-item"><a href="./tendances.php" class="footer-link">Tendances</a></td>
 				</tr>
 				<tr>
