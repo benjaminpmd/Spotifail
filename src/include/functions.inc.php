@@ -10,6 +10,7 @@
 
 define("API_KEY", $_ENV["LASTFM_API_KEY"]);
 define("SEPARATOR", ";");
+define("RANDOM_IMG_DIRECTORY_PATH", "./images/index/");
 
 /**
  * Function to get the APOD (Astronomy Picture of the Day) from the NASA API.
@@ -377,4 +378,30 @@ function log_visited_track(string $name, string $artist): void {
     fclose($file);
 
 }
-?>
+
+/**
+ * Function to get random image informations
+ * 
+ * @return array containing the name and the path of an image.
+ */
+function get_random_image(): array {
+    
+    $img_dir_path = RANDOM_IMG_DIRECTORY_PATH;
+    
+    $files = scandir($img_dir_path);
+    
+    $count = count($files);
+
+    $index = rand(2, ($count-1));
+    
+    $filename = $files[$index];
+
+    $filename_return = substr($filename, 0, -4);
+
+    $return_array = [
+        "img_path" => RANDOM_IMG_DIRECTORY_PATH.$filename,
+        "img_name" => $filename_return,
+    ];
+
+    return $return_array;
+}

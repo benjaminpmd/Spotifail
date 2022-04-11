@@ -86,4 +86,3 @@ function increment_hit_counter(string $page_name): string {
 
 	return $hit_value_result;
 }
-?>
