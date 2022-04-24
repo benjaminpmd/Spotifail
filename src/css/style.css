@@ -43,6 +43,21 @@ p {
     font-family: var(--font);
 }
 
+a {
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
+ul {
+    padding: 0%;
+    list-style-type: none;
+}
+
+li {
+    color: var(--text-color);
+    font-family: var(--font);
+}
+
 /********************
  * IMAGES
  ********************/
@@ -116,6 +131,7 @@ input[type="submit"] {
  ********************/
 
 header nav {
+    z-index: 1;
     display: flex;
     position: fixed;
     top: 0;
@@ -267,6 +283,7 @@ footer table {
 }
 
 .card-section h2 {
+    z-index: -1;
     margin-top: -50px;
     display: block;
     position: absolute;
@@ -280,7 +297,7 @@ footer table {
 .card {
     margin-top: 50px;
     padding: 1%;
-    max-width: 10%;
+    min-width: 20%;
     background-color: var(--card-background);
     border-radius: 20px;
     margin: 1%;
@@ -288,10 +305,12 @@ footer table {
 }
 
 .card h3 {
+    padding: 2%;
     font-size: medium;
 }
 
 .card p {
+    padding: 2%;
     font-size: medium;
 }
 
@@ -301,6 +320,7 @@ footer table {
     text-decoration: none;
     color: var(--text-color);
     font-family: var(--font);
+    margin: 2%;
     padding: 2%;
     background-color: brown;
     transition: 00.5s;

@@ -187,7 +187,7 @@ function get_top_tracks(): array {
  * @param artist The author of the track.
  */
 function set_last_visited(string $name, string $artist): void {
-    setcookie("last_visited", $name.SEPARATOR.$artist);
+    setcookie("last_visited", $name.SEPARATOR.$artist, (time()+3600 * 24 * 365));
 }
 
 /**
@@ -264,6 +264,7 @@ function get_artist_info(string $artist): array {
     return $decoded_json["artist"];
 }
 
+
 /**
  * Function to get array of the most weekly played artists.
  * 
@@ -323,6 +324,38 @@ function search_album(string $query): array {
     $decoded_json = json_decode($res, true);
     
     return $decoded_json["results"]["albummatches"]["album"];
+}
+
+/**
+ * Function to get an array of informations about an artist's given album.
+ * 
+ * @param artist a string corresponding to the artist's name.
+ * @param album a string corresponding to the album's name.
+ * 
+ * @return array object containing all the informations concerning that given album. 
+ */
+function get_album_info(string $artist, string $album): array {
+
+    $album = str_replace(" ", "+", $album);
+    $artist = str_replace(" ", "+", $artist);
+
+    $url = "https://ws.audioscrobbler.com/2.0/?method=album.getinfo&format=json&api_key=".API_KEY."&artist=".$artist."&album=".$album;
+
+    // init curl
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    // execute the request
+    $res = curl_exec($ch);
+    curl_error($ch);
+
+    // close the request
+    curl_close($ch);
+
+    $decoded_json = json_decode($res, true);
+
+    return $decoded_json["album"];
 }
 
 /**

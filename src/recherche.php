@@ -88,7 +88,7 @@ include "./include/functions.inc.php";
                 echo "<article class=\"card\">\n";
                 echo "<h3>" . $value["name"] . "</h3>\n";
                 echo "<p>" . "Artiste : " . $value["artist"] . "</p>\n";
-                echo "<a href=\"./details.php?type=album&name=" . $value["name"] . "\">Découvrir</a>\n";
+                echo "<a href=\"./details.php?type=album&name=" . $value["name"] ."&artist=" . $value["artist"] . "\">Découvrir</a>\n";
                 echo "</article>\n";
             }
 

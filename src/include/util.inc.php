@@ -10,7 +10,7 @@ define("DEFAULT_DATE", "unkown");
 function get_stylesheet_path(): string {
 	if (isset($_GET["theme"])) {
 		if ($_GET["theme"] == "light") {
-			setcookie("theme", "light");
+			setcookie("theme", "light", (time()+3600 * 24 * 365));
 			return "./css/light.css";
 		}
 		else {
@@ -30,6 +30,30 @@ function get_stylesheet_path(): string {
 }
 
 function get_theme_link(): string {
+	$parameters = "";
+	foreach ($_GET as $key => $value) {
+		$parameters .= '&' . $key . '=' . $value;
+	}
+	if (isset($_GET["theme"])) {
+		if ($_GET["theme"] == "light") {
+			return "dark" . $parameters;
+		}
+		else {
+			return "light" . $parameters;
+		}
+	}
+	else {
+		if (isset($_COOKIE["theme"]) && $_COOKIE["theme"] == "light") {
+			return "dark" . $parameters;
+		}
+		else {
+			return "light" . $parameters;
+		}
+	}
+	return "dark" . $parameters;
+}
+
+function get_theme(): string {
 	if (isset($_GET["theme"])) {
 		if ($_GET["theme"] == "light") {
 			return "dark";

@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 include_once "./include/util.inc.php";
-$theme = get_theme_link();
+$theme = get_theme();
+$theme_url = get_theme_link();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -60,7 +61,7 @@ $theme = get_theme_link();
                 <input type="hidden" name="album" value="on" />
                 <input type="hidden" name="tag" value="on" />
             </form>
-            <a href="?theme=<?php echo $theme ?>" id="theme-link"><img src="./images/<?php echo $theme ?>.png" alt="changez le theme ici" id="theme-icon" /></a>
+            <a href="?theme=<?php echo $theme_url ?>" id="theme-link"><img src="./images/<?php echo $theme ?>.png" alt="changez le theme ici" id="theme-icon" /></a>
         </nav>
         <?php
         if (isset($page_title)) {
