@@ -36,6 +36,9 @@ $explanation = format_for_display($apod_res["explanation"]);
 				<h3>Votre géolocalisation</h3>
 				<?php
 				$geoloc_res = get_geolocation();
+				if ($geoloc_res["city"] == "error") {
+					echo "<p>Trop de requêtes ont été éfféctuées.</p>\n";
+				}
 				if ($geoloc_res["city"] == "") {
 					echo "<p>Votre adresse IP indique que vous êtes situé.e en " . $geoloc_res["countryName"] . "</p>\n";
 				} else {

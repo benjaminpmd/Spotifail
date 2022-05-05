@@ -37,9 +37,8 @@ $random_img = get_random_image();
             }
             ?>
             <article>
-                <h3>Une image au hasard ? La voici !</h3>
-                <p>Chez Spotifail, nous avons aussi le plaisir de vous présenter à chaque nouvelle connexion à notre page d'accueil,
-                    une image sélectionnée au hasard ! Evidemment, cette fonctionnalité est encore dans une phase de test.</p>
+                <h3>Une image forte !</h3>
+                <p>Dans l'histoire musicale, il y a eu de nombreux moments forts, en voici un en image.</p>
                 <figure>
                     <img src="<?php echo $random_img["img_path"]; ?>" alt="Image générée aléatoirement."/>
                     <figcaption><?php echo str_replace("_", " ", $random_img["img_name"]); ?></figcaption>

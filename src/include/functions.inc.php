@@ -94,10 +94,17 @@ function get_geolocation(): array
 
 	$xml = simplexml_load_string($res);
 
-	return [
-		"countryName" => $xml->geoplugin_countryName,
-		"city" => $xml->geoplugin_city
-	];
+	if ($xml == false) {
+		return [
+			"city" => "erreur"
+		];
+	}
+	else {
+		return [
+			"countryName" => $xml->geoplugin_countryName,
+			"city" => $xml->geoplugin_city
+		];
+	}
 }
 
 /**
