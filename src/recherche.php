@@ -62,7 +62,7 @@ include "./include/functions.inc.php";
 
                     echo "\t\t\t<article class=\"card\">\n";
                     echo "\t\t\t\t<h3>" . $track_display_name . "</h3>\n";
-                    echo "\t\t\t\t<a href=\"./details.php?type=artist&name=" . $artist_name . "\">Artiste : " . $artist_display_name . "</a>\n";
+                    echo "\t\t\t\t<a href=\"./details.php?type=artist&amp;name=" . $artist_name . "\">Artiste : " . $artist_display_name . "</a>\n";
                     echo "\t\t\t\t<a href=\"./details.php?type=track&amp;name=" . $track_name . "&amp;artist=" . $artist_name . "\" class=\"submit-style\">Découvrir</a>\n";
                     echo "\t\t\t</article>\n";
                 }
@@ -73,7 +73,7 @@ include "./include/functions.inc.php";
             if (isset($_GET["artist"])) {
                 $artists = search_artist($_GET["q"]);
 
-                $query = str_replace("&", "&amp;", $_GET["q"]);
+                $query = format_for_display($_GET["q"]);
 
                 echo "\t\t<section class=\"card-section\">\n";
                 echo "\t\t\t<h2>Artistes correspondants à " . $query . "</h2>\n";
@@ -96,7 +96,7 @@ include "./include/functions.inc.php";
             if (isset($_GET["album"])) {
                 $albums = search_album($_GET["q"]);
 
-                $query = str_replace("&", "&amp;", $_GET["q"]);
+                $query = format_for_display($_GET["q"]);
 
                 echo "\t\t<section class=\"card-section\">\n";
                 echo "\t\t\t<h2>Albums correspondants à " . $query . "</h2>\n";
@@ -111,7 +111,7 @@ include "./include/functions.inc.php";
 
                     echo "\t\t\t<article class=\"card\">\n";
                     echo "\t\t\t\t<h3>" . $album_display_name . "</h3>\n";
-                    echo "\t\t\t\t<a href=\"./details.php?type=artist&name=" . $artist_name . "\">Artiste : " . $artist_display_name . "</a>\n";
+                    echo "\t\t\t\t<a href=\"./details.php?type=artist&amp;name=" . $artist_name . "\">Artiste : " . $artist_display_name . "</a>\n";
                     echo "\t\t\t\t<a href=\"./details.php?type=album&amp;name=" . $album_name ."&amp;artist=" . $artist_name . "\" class=\"submit-style\">Découvrir</a>\n";
                     echo "\t\t\t</article>\n";
                 }

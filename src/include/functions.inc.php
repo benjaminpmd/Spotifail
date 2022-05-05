@@ -11,6 +11,8 @@
 include_once "./include/utils.inc.php";
 
 define("API_KEY", $_ENV["LASTFM_API_KEY"]);
+define("APOD_API_KEY", $_ENV["APOD_API_KEY"]);
+
 define("SEPARATOR", ";");
 define("RANDOM_IMG_DIRECTORY_PATH", "./images/index/");
 define("VISITED_LOG_PATH", "./assets/log_visited_tracks.csv");
@@ -38,7 +40,7 @@ function get_nasa_daily_image(): array
 {
 
 	// API stored in an ENV var
-	$url = "https://api.nasa.gov/planetary/apod?api_key=" . $_ENV["APOD_API_KEY"];
+	$url = "https://api.nasa.gov/planetary/apod?api_key=" . APOD_API_KEY;
 
 	// init curl
 	$ch = curl_init();
