@@ -1,0 +1,8 @@
+index.php:1
+plan.php:1
+recherche.php:1
+tendances.php:1
+image-du-jour.php:1
+statistiques.php:1
+details.php:1
+tag.php:1

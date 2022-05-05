@@ -1,3 +1,8 @@
+<?php
+include_once './include/utils.inc.php';
+
+$hit_counter = increment_hit_counter(basename($_SERVER['PHP_SELF']))
+?>
 	<footer>
 		<table>
 			<thead>
@@ -10,7 +15,7 @@
 			<tbody>
 				<tr>
 					<td class="footer-item">Projet de Dev Web 2022</td>
-					<td class="footer-item"><a target="_blank" href="https://github.com/benjaerospace/Spotifail" class="footer-link"><img src="./images/github.png" alt="github log" height="20" /> Github</a></td>
+					<td class="footer-item"><a target="_blank" href="https://github.com/benjaerospace/Spotifail" class="footer-link"><img src="./images/github.png" alt="github logo" height="20" /> Github</a></td>
 					<td class="footer-item"><a href="./plan.php" class="footer-link">Plan du site</a></td>
 				</tr>
 				<tr>
@@ -25,12 +30,7 @@
 				</tr>
 				<tr>
 					<td class="footer-item">CY Cergy Paris Université</td>
-					<td class="footer-item">
-						<?php
-						$page_name = basename($_SERVER['PHP_SELF']);
-						echo "Chargements de la page : " . increment_hit_counter($page_name);
-						?>
-					</td>
+					<td class="footer-item">Chargements de la page : <?php echo $hit_counter; ?></td>
 					<td class="footer-item"><a href="./tendances.php" class="footer-link">Tendances</a></td>
 				</tr>
 				<tr>
@@ -46,6 +46,6 @@
 			</tbody>
 		</table>
 	</footer>
-	</body>
+</body>
 
-	</html>
+</html>

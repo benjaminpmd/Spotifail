@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&display=swap');
 
-:root {
-    --text-color: #f0f0f0;
-    --background-color: #202020;
-    --card-background: #2c2c2c;
-    --font: 'Archivo', sans-serif;
-}
-
-
 
 /********************
  * BODY
@@ -16,8 +8,8 @@
 body {
     padding: 0;
     margin: 0%;
-    background-color: var(--background-color); 
-    color: var(--text-color);
+    background-color: #202020; 
+    color: #f0f0f0;
     text-align: center;
 }
 
@@ -29,23 +21,23 @@ h1 {
     user-select: none;
     font-size: 300%;
     letter-spacing: 1px;
-    color: var(--text-color);
-    font-family: var(--font);
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
 }
 
 h2, h3, h4 {
-    color: var(--text-color);
-    font-family: var(--font);
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
 }
 
 p {
-    color: var(--text-color);
-    font-family: var(--font);
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
 }
 
 a {
-    color: var(--text-color);
-    font-family: var(--font);
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
 }
 
 ul {
@@ -54,8 +46,8 @@ ul {
 }
 
 li {
-    color: var(--text-color);
-    font-family: var(--font);
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
 }
 
 /********************
@@ -68,8 +60,8 @@ img {
 }
 
 figcaption {
-    color: var(--text-color);
-    font-family: var(--font);
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
     margin: 1% 0% 1%;
 }
 
@@ -96,14 +88,14 @@ article {
 
 form {
     padding: 2%;
-    font-family: var(--font);
-    color: var(--text-color);
+    font-family: 'Archivo', sans-serif;
+    color: #f0f0f0;
 }
 
 fieldset {
     padding: 2%;
     border-radius: 20px;
-    color: var(--text-color)
+    color: #f0f0f0
 }
 
 input[type="text"] {
@@ -111,9 +103,9 @@ input[type="text"] {
     border: 0;
     padding: 1%;
     margin: 2%;
-    background-color: var(--card-background);
-    color: var(--text-color);
-    font-family: var(--font);
+    background-color: #2c2c2c;
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
 }
 
 input[type="submit"] {
@@ -122,8 +114,8 @@ input[type="submit"] {
     padding: 1%;
     margin: 2%;
     background-color: rgb(145, 0, 0);
-    color: var(--text-color);
-    font-family: var(--font);
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
 }
 
 /********************
@@ -180,32 +172,41 @@ header h1 {
     vertical-align: middle;
 }
 
-#theme-link {
-    margin-top: 5px;
-    padding: 1%;
-}
-
 #quick-search {
-    margin: 0;
-    margin-top: 5px;
-    padding: 1%;
     display: flex;
+    width: 20%;
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
 }
 
 #quick-search input[type=text] {
     border-radius: 20px;
-    padding: 2%;
     margin: 0;
     border: 0;
     background-color: #484848;
     color: whitesmoke;
-    font-family: var(--font);
+    font-family: 'Archivo', sans-serif;
+    height: 15px;
 }
 
 #quick-search input[type=image] {
-    padding: 2%;
     border: 0;
+    margin-left: 1%;
+    height:30px;
+    vertical-align: middle;
 }
+
+#theme-link {
+    display: block;
+    min-width: 5%;
+}
+
+#theme-icon {
+    width: 30px;
+    margin: 15px;
+}
+
 
 /********************
  * FOOTER
@@ -230,21 +231,25 @@ footer table {
 .footer-title {
     padding: 1%;
     color: whitesmoke;
-    font-family: var(--font);
+    font-family: 'Archivo', sans-serif;
     vertical-align: middle;
 }
 
 .footer-item {
     color: whitesmoke;
-    font-family: var(--font);
+    font-family: 'Archivo', sans-serif;
     vertical-align: middle;
 }
 
 .footer-link {
     color: whitesmoke;
-    font-family: var(--font);
+    font-family: 'Archivo', sans-serif;
     text-decoration: none;
     vertical-align: middle;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
 }
 
 /********************
@@ -259,8 +264,8 @@ footer table {
 }
 
 .plan-item a {
-   color: var(--text-color);
-   font-family: var(--font);
+   color: #f0f0f0;
+   font-family: 'Archivo', sans-serif;
    text-decoration: none;
    transition: 0.5s;
 }
@@ -298,10 +303,9 @@ footer table {
     margin-top: 50px;
     padding: 1%;
     min-width: 20%;
-    background-color: var(--card-background);
+    background-color: #2c2c2c;
     border-radius: 20px;
     margin: 1%;
-    display: inline;
 }
 
 .card h3 {
@@ -315,18 +319,23 @@ footer table {
 }
 
 .card a {
+    padding: 2%;
+    font-size: medium;
+}
+
+.submit-style {
     border-radius: 20px;
     font-size: medium;
     text-decoration: none;
-    color: var(--text-color);
-    font-family: var(--font);
+    color: #f0f0f0;
+    font-family: 'Archivo', sans-serif;
     margin: 2%;
     padding: 2%;
     background-color: brown;
     transition: 00.5s;
 }
 
-.card a:hover {
+.submit-style:hover {
     background-color: rgb(212, 37, 37);
     transition: 00.5s;
 }
