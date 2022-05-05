@@ -18,10 +18,31 @@ define("GRAPH_PATH", "./images/graph.png");
  * @param string the value to format.
  * @return string the formatted value.
  */
-function format_string(string $str): string {
+function format_for_link(string $str): string {
+
     $str = str_replace(" ", "+", $str);
     $str = str_replace("&", "&amp;", $str);
-    return $str;
+	$str = str_replace("[", "", $str);
+	$str = str_replace("]", "", $str);
+	$str = str_replace("\"", "", $str);
+    
+	return $str;
+}
+
+/**
+ * Function to correcty format strings for display.
+ * 
+ * @param string the value to format.
+ * @return string the formatted value.
+ */
+function format_for_display(string $str): string {
+    
+	$str = str_replace("&", "&amp;", $str);
+	$str = str_replace("[", "&#91;", $str);
+	$str = str_replace("]", "&#93;", $str);
+	$str = str_replace('"', "&#34;", $str);
+    
+	return $str;
 }
 
 /**

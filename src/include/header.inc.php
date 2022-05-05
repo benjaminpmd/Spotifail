@@ -23,7 +23,7 @@ if (!isset($page_date) || empty($page_date)) {
 
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
 	<meta charset="UTF-8" />
@@ -63,7 +63,7 @@ if (!isset($page_date) || empty($page_date)) {
 				<input type="hidden" name="album" value="on" />
 				<input type="hidden" name="tag" value="on" />
 			</form>
-			<a href="<?php echo format_string($theme_link_url); ?>" id="theme-link"><img src="<?php echo $theme_link_image; ?>" alt="changez le thème ici" id="theme-icon" /></a>
+			<a href="<?php echo format_for_link($theme_link_url); ?>" id="theme-link"><img src="<?php echo $theme_link_image; ?>" alt="changez le thème ici" id="theme-icon" /></a>
 		</nav>
 		<h1><?php echo $page_title; ?></h1>
 	</header>

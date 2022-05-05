@@ -1,5 +1,13 @@
 <?php
-$page_title = "Le meilleur du genre " . str_replace("&", "&amp;", $_GET["tag"]);
+
+$tag_display_name = $_GET["tag"];
+
+$tag_display_name = str_replace("&", "&amp;", $tag_display_name);
+$tag_display_name = str_replace("[", "&#91;", $tag_display_name);
+$tag_display_name = str_replace("]", "&#93;", $tag_display_name);
+$tag_display_name = str_replace('"', "&#34;", $tag_display_name);
+
+$page_title = "Le meilleur du genre " . $tag_display_name;
 $page_date = "11/04/22";
 
 include "./include/header.inc.php";
@@ -17,11 +25,11 @@ include "./include/functions.inc.php";
 
             foreach ($tracks as $value) {
 
-                $track_display_name = str_replace("&", "&amp;", $value["name"]);
-                $track_name = format_string($value["name"]);
+                $artist_name = format_for_link($value["artist"]["name"]);
+                $artist_display_name = format_for_display($value["artist"]["name"]);
 
-                $artist_display_name = str_replace("&", "&amp;", $value["artist"]["name"]);
-                $artist_name = format_string($value["artist"]["name"]);
+                $track_name = format_for_link($value["name"]);
+                $track_display_name = format_for_display($value["name"]);
 
                 echo "\t\t\t<article class=\"card\">\n";
                 echo "\t\t\t\t<h3>" . $track_display_name . "</h3>\n";
@@ -38,8 +46,8 @@ include "./include/functions.inc.php";
 
             foreach ($artists as $value) {
 
-                $artist_display_name = str_replace("&", "&amp;", $value["name"]);
-                $artist_name = format_string($value["name"]);
+                $artist_name = format_for_link($value["name"]);
+                $artist_display_name = format_for_display($value["name"]);
 
                 echo "\t\t\t<article class=\"card\">\n";
                 echo "\t\t\t\t<h3>" . $artist_display_name . "</h3>\n";

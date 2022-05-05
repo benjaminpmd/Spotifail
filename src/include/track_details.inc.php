@@ -3,16 +3,18 @@ log_visited_track($_GET["name"], $_GET["artist"]);
 set_last_visited($_GET["name"], $_GET["artist"]);
 
 $duration = ms_to_minute(intval($track["duration"]));
-$summary = explode("<a", $track["wiki"]["summary"]);
 
-$track_dsiplay_name = str_replace("&", "&amp;", $track["name"]);
-$track_name = format_string($track["name"]);
+$summary = explode("<a", $track["wiki"]["summary"])[0];
+$summary = format_for_display($summary);
 
-$artist_display_name = str_replace("&", "&amp;", $track["artist"]["name"]);
-$artist_name = format_string($track["artist"]["name"]);
+$track_dsiplay_name = format_for_display($track["name"]);
+$track_name = format_for_link($track["name"]);
 
-$album_display_name = str_replace("&", "&amp;", $track["album"]["title"]);
-$album_name = format_string($track["album"]["title"]);
+$artist_display_name = format_for_display($track["artist"]["name"]);
+$artist_name = format_for_link($track["artist"]["name"]);
+
+$album_display_name = format_for_display($track["album"]["title"]);
+$album_name = format_for_link($track["album"]["title"]);
 ?>
 
 		<section>
@@ -47,7 +49,7 @@ $album_name = format_string($track["album"]["title"]);
 			if (!empty($track["wiki"]["summary"])) {
 				echo "<article>\n";
 				echo "\t\t\t\t<h3>A propos du titre</h3>\n";
-				echo "\t\t\t\t<p>" . $summary[0] . "</p>\n";
+				echo "\t\t\t\t<p>" . $summary . "</p>\n";
 				echo "\t\t\t</article>\n";
 			}
 			?>
@@ -57,11 +59,13 @@ $album_name = format_string($track["album"]["title"]);
 			echo "<section class=\"card-section\">\n";
 			echo "\t\t\t<h2>Tags associés</h2>\n";
 			foreach ($track["toptags"]["tag"] as $tag_value) {
-				$tag_name = format_string($tag_value["name"]);
-				$tag = str_replace("&", "&amp;", $tag_value["name"]);
+				
+				$tag_name = format_for_link($tag_value["name"]);
+				$tag_display_name = format_for_display($tag_value["name"]);
+
 				echo "\t\t\t<article class=\"card\">\n";
-				echo "\t\t\t\t<h3>" . $tag . "</h3>\n";
-				echo "\t\t\t\t<a class=\"submit-style\" href=\"./tag.php?tag=" . $tag_name . "\">Découvrir</a>\n";
+				echo "\t\t\t\t<h3>" . $tag_display_name . "</h3>\n";
+				echo "\t\t\t\t<a href=\"./tag.php?tag=" . $tag_name . "\" class=\"submit-style\">Découvrir</a>\n";
 				echo "\t\t\t</article>\n";
 			}
 			echo "\t\t</section>\n";

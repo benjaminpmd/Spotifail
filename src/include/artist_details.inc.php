@@ -1,10 +1,12 @@
 <?php
-$artist_name = str_replace("&", "&amp;", $artist["name"]);
+$artist_display_name = format_for_display($artist["name"]);
+
 $summary = explode("<a", $artist["bio"]["summary"])[0];
+$summary = format_for_display($summary);
 ?>
         
         <section>
-            <h2><?php echo $artist_name; ?></h2>
+            <h2><?php echo $artist_display_name; ?></h2>
             <article>
                 <h3>Informations</h3>
                 <ul>
@@ -28,11 +30,11 @@ $summary = explode("<a", $artist["bio"]["summary"])[0];
                 
                 foreach($artist["tags"]["tag"] as $tag_value) {
                     
-                    $tag_name = format_string($tag_value["name"]);
-                    $tag = str_replace("&", "&amp;", $tag_value["name"]);
-
+                    $tag_name = format_for_link($tag_value["name"]);
+                    $tag_display_name = format_for_display($tag_value["name"]);
+    
                     echo "\t\t\t<article class=\"card\">\n";
-                    echo "\t\t\t\t<h3>".$tag."</h3>\n";
+                    echo "\t\t\t\t<h3>" . $tag_display_name . "</h3>\n";
                     echo "\t\t\t\t<a href=\"./tag.php?tag=" . $tag_name . "\" class=\"submit-style\">Découvrir</a>\n";
                     echo "\t\t\t</article>\n";
                 }

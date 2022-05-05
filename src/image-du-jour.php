@@ -7,10 +7,10 @@ include "./include/functions.inc.php";
 
 $apod_res = get_nasa_daily_image();
 
-$title = str_replace("&", "amp;", $apod_res["title"]);
-$url = format_string($apod_res["url"]);
-$copyright = str_replace("&", "amp;", $apod_res["copyright"]);
-$explanation = str_replace("&", "&amp;", $apod_res["explanation"]);
+$title = format_for_display($apod_res["title"]);
+$url = format_for_link($apod_res["url"]);
+$copyright = format_for_display($apod_res["copyright"]);
+$explanation = format_for_display($apod_res["explanation"]);
 ?>
 
 	<main>

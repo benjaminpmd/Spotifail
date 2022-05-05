@@ -22,8 +22,8 @@ $random_img = get_random_image();
             if (!empty($last_visited)) {
                 $track = get_track_info($last_visited[0], $last_visited[1]);
                 
-                $name = format_string($last_visited[0]);
-                $artist = format_string($last_visited[1]);
+                $name = format_for_link($last_visited[0]);
+                $artist = format_for_link($last_visited[1]);
                 
                 echo "<article>\n";
                 echo "\t\t\t\t<h3>Dernier titre visité</h3>\n";

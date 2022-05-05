@@ -13,11 +13,11 @@ include "./include/functions.inc.php";
             $tracks = get_top_tracks();
             foreach ($tracks as $track) {
 
-                $track_display_name = str_replace("&", "&amp;", $track["name"]);
-                $track_name = format_string($track["name"]);
+                $artist_name = format_for_link($track["artist"]["name"]);
+                $artist_display_name = format_for_display($track["artist"]["name"]);
 
-                $artist_display_name = str_replace("&", "&amp;", $track["artist"]["name"]);
-                $artist_name = format_string($track["artist"]["name"]);
+                $track_name = format_for_link($track["name"]);
+                $track_display_name = format_for_display($track["name"]);
 
                 echo "\t\t\t<article class=\"card\">\n";
                 echo "\t\t\t\t<h3>" . $track_display_name . "</h3>\n";
@@ -33,8 +33,8 @@ include "./include/functions.inc.php";
             $artists = get_top_artists();
             foreach ($artists as $artist) {
                 
-                $artist_display_name = str_replace("&", "&amp;", $artist["name"]);
-                $artist_name = format_string($artist["name"]);
+                $track_name = format_for_link($artist["name"]);
+                $track_display_name = format_for_display($artist["name"]);
 
                 echo "\t\t\t<article class=\"card\">\n";
                 echo "\t\t\t\t<h3>" . $artist_display_name . "</h3>\n";

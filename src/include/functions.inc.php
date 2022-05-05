@@ -145,7 +145,7 @@ function get_random_image(): array
 function search_track(string $query): array
 {
 
-	$query = format_string($query);
+	$query = format_for_link($query);
 
 	$url = "https://ws.audioscrobbler.com/2.0/?method=track.search&format=json&api_key=" . API_KEY . "&track=" . $query;
 
@@ -306,7 +306,7 @@ function get_last_visited(): array
 function search_artist(string $query): array
 {
 
-	$query = format_string($query);
+	$query = format_for_link($query);
 
 	$url = "https://ws.audioscrobbler.com/2.0/?method=artist.search&format=json&api_key=" . API_KEY . "&artist=" . $query;
 	// init curl
@@ -404,7 +404,7 @@ function get_top_artists(): array
 function search_album(string $query): array
 {
 
-	$query = format_string($query);
+	$query = format_for_link($query);
 
 	$url = "https://ws.audioscrobbler.com/2.0/?method=album.search&format=json&api_key=" . API_KEY . "&album=" . $query;
 	// init curl

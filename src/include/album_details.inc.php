@@ -1,10 +1,10 @@
 <?php
 $summary = explode("<a", $album["wiki"]["summary"])[0];
 
-$album_display_name = str_replace("&", "&amp;", $album["name"]);
+$album_display_name = format_for_display($album["name"]);
 
-$artist_name = format_string($album["artist"]);
-$artist_display_name = str_replace("&", "&amp;", $album["artist"]);
+$artist_name = format_for_link($album["artist"]);
+$artist_display_name = format_for_display($album["artist"]);
 ?>
 		
 		<section>
@@ -37,9 +37,9 @@ $artist_display_name = str_replace("&", "&amp;", $album["artist"]);
 			// checking if there is only one track in the album
 			if (array_key_exists("name", $album["tracks"]["track"])) {
 
-				$track_name = format_string($album["tracks"]["track"]["name"]);
-				$track_display_name = str_replace("&", "&amp;", $album["tracks"]["track"]["name"]);
-				$track_artist_name = format_string($album["tracks"]["track"]["artist"]["name"]);
+				$track_name = format_for_link($album["tracks"]["track"]["name"]);
+				$track_display_name = format_for_display($album["tracks"]["track"]["name"]);
+				$track_artist_name = format_for_display($album["tracks"]["track"]["artist"]["name"]);
 
 				echo "\t\t\t<article class=\"card\">\n";
 				echo "\t\t\t\t<h3>" . $track_display_name . "</h3>\n";
@@ -50,9 +50,10 @@ $artist_display_name = str_replace("&", "&amp;", $album["artist"]);
 
 				foreach ($album["tracks"]["track"] as $track_value) {
 
-					$track_name = format_string($track_value["name"]);
-					$track_display_name = str_replace("&", "&amp;", $track_value["name"]);
-					$track_artist_name = format_string($track_value["artist"]["name"]);
+					$track_name = format_for_link($track_value["name"]);
+					$track_display_name = format_for_display($track_value["name"]);
+					
+					$track_artist_name = format_for_link($track_value["artist"]["name"]);
 
 					echo "\t\t\t<article class=\"card\">\n";
 					echo "\t\t\t\t<h3>" . $track_display_name . "</h3>\n";
@@ -70,11 +71,11 @@ $artist_display_name = str_replace("&", "&amp;", $album["artist"]);
 
 			foreach ($album["tags"]["tag"] as $tag_value) {
 
-				$tag_name = format_string($tag_value["name"]);
-				$tag = str_replace("&", "&amp;", $tag_value["name"]);
+				$tag_name = format_for_link($tag_value["name"]);
+				$tag_display_name = format_for_display($tag_value["name"]);
 
 				echo "\t\t\t<article class=\"card\">\n";
-				echo "\t\t\t\t<h3>" . $tag . "</h3>\n";
+				echo "\t\t\t\t<h3>" . $tag_display_name . "</h3>\n";
 				echo "\t\t\t\t<a href=\"./tag.php?tag=" . $tag_name . "\" class=\"submit-style\">Découvrir</a>\n";
 				echo "\t\t\t</article>\n";
 			}

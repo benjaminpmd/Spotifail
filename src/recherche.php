@@ -16,7 +16,7 @@ include "./include/functions.inc.php";
                         <label>Rechercher :</label>
                         <?php
                         if (isset($_GET["q"])) {
-                            echo "<input type=\"text\" placeholder=\"Titre, artiste...\" name=\"q\" value=\"" . $_GET["q"] . "\" />\n";
+                            echo "<input type=\"text\" placeholder=\"Titre, artiste...\" name=\"q\" value=\"" . format_for_display($_GET["q"]) . "\" />\n";
                         } else echo "<input type=\"text\" placeholder=\"Titre, artiste...\" name=\"q\" />\n";
                         ?>
                         <input type="submit" value="Rechercher" />
@@ -47,22 +47,22 @@ include "./include/functions.inc.php";
             if (isset($_GET["track"])) {
                 $tracks = search_track($_GET["q"]);
 
-                $query = str_replace("&", "&amp;", $_GET["q"]);
+                $query = format_for_display($_GET["q"]);
 
                 echo "<section class=\"card-section\">\n";
                 echo "\t\t\t<h2>Titres correspondants à " . $query . "</h2>\n";
 
                 foreach ($tracks as $value) {
 
-                    $artist_name = str_replace("&", "&amp;", $value["artist"]);
-                    $artist_display_name = format_string($value["artist"]);
+                    $artist_name = format_for_link($value["artist"]);
+                    $artist_display_name = format_for_display($value["artist"]);
 
-                    $track_name = format_string($value["name"]);
-                    $track_display_name = str_replace("&", "&amp;", $value["name"]);
+                    $track_name = format_for_link($value["name"]);
+                    $track_display_name = format_for_display($value["name"]);
 
                     echo "\t\t\t<article class=\"card\">\n";
                     echo "\t\t\t\t<h3>" . $track_display_name . "</h3>\n";
-                    echo "\t\t\t\t<p>" . "Artiste : " . $artist_display_name . "</p>\n";
+                    echo "\t\t\t\t<a href=\"./details.php?type=artist&name=" . $artist_name . "\">Artiste : " . $artist_display_name . "</a>\n";
                     echo "\t\t\t\t<a href=\"./details.php?type=track&amp;name=" . $track_name . "&amp;artist=" . $artist_name . "\" class=\"submit-style\">Découvrir</a>\n";
                     echo "\t\t\t</article>\n";
                 }
@@ -80,8 +80,8 @@ include "./include/functions.inc.php";
 
                 foreach ($artists as $value) {
 
-                    $artist_name = str_replace("&", "&amp;", $value["name"]);
-                    $artist_display_name = format_string($value["name"]);
+                    $artist_name = format_for_link($value["name"]);
+                    $artist_display_name = format_for_display($value["name"]);
 
                     echo "\t\t\t<article class=\"card\">\n";
                     echo "\t\t\t\t<h3>" . $artist_display_name . "</h3>\n";
@@ -103,15 +103,15 @@ include "./include/functions.inc.php";
 
                 foreach ($albums as $value) {
 
-                    $artist_name = str_replace("&", "&amp;", $value["artist"]);
-                    $artist_display_name = format_string($value["artist"]);
+                    $artist_name = format_for_link($value["artist"]);
+                    $artist_display_name = format_for_display($value["artist"]);
 
-                    $album_name = format_string($value["name"]);
-                    $album_display_name = str_replace("&", "&amp;", $value["name"]);
+                    $album_name = format_for_link($value["name"]);
+                    $album_display_name = format_for_display($value["name"]);
 
                     echo "\t\t\t<article class=\"card\">\n";
                     echo "\t\t\t\t<h3>" . $album_display_name . "</h3>\n";
-                    echo "\t\t\t\t<p>" . "Artiste : " . $artist_display_name . "</p>\n";
+                    echo "\t\t\t\t<a href=\"./details.php?type=artist&name=" . $artist_name . "\">Artiste : " . $artist_display_name . "</a>\n";
                     echo "\t\t\t\t<a href=\"./details.php?type=album&amp;name=" . $album_name ."&amp;artist=" . $artist_name . "\" class=\"submit-style\">Découvrir</a>\n";
                     echo "\t\t\t</article>\n";
                 }
