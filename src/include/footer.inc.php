@@ -19,7 +19,7 @@ $hit_counter = increment_hit_counter(basename($_SERVER['PHP_SELF']))
 					<td class="footer-item"><a href="./plan.php" class="footer-link">Plan du site</a></td>
 				</tr>
 				<tr>
-					<td class="footer-item">11 Avril 2022</td>
+					<td class="footer-item"><?php echo $page_date; ?></td>
 					<td class="footer-item"><a target="_blank" href="https://www.last.fm" class="footer-link">Last.fm</a></td>
 					<td class="footer-item"><a href="./index.php" class="footer-link">Accueil</a></td>
 				</tr>

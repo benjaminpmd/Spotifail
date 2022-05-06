@@ -11,10 +11,14 @@ $artist_display_name = format_for_display($album["artist"]);
 			<h2><?php echo $_GET["name"] ?></h2>
 			<article>
 				<h3>A propos</h3>
-				<figure>
-					<img src="<?php echo $album["image"]["3"]["#text"]; ?>" alt="<?php echo "Couverture de l'album " . $album_display_name; ?>" />
-					<figcaption><?php echo "Couverture de l'album " . $album_display_name; ?></figcaption>
-				</figure>
+				<?php 
+				if (!empty($album["image"]["3"]["#text"])) {
+					echo "\t\t\t\t<figure>\n";
+					echo "\t\t\t\t\t<img src=\"".$album["image"]["3"]["#text"]."\" alt=\"Couverture de l'album " . $album_display_name . "\" />\n";
+					echo "\t\t\t\t\t<figcaption>Couverture de l'album " . $album_display_name . "</figcaption>\n";
+					echo "\t\t\t\t</figure>\n";
+				}
+				?>
 				<a href="<?php echo "./details.php?type=artist&amp;name=" . $artist_name; ?>">Artiste : <?php echo $artist_display_name; ?></a>
 				<p>Album écouté par <?php echo $album["listeners"] ?> personnes</p>
 				<p>Nombre d'écoutes : <?php echo $album["playcount"] ?></p>

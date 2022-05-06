@@ -8,7 +8,7 @@ $tag_display_name = str_replace("]", "&#93;", $tag_display_name);
 $tag_display_name = str_replace('"', "&#34;", $tag_display_name);
 
 $page_title = "Le meilleur du genre " . $tag_display_name;
-$page_date = "11/04/22";
+$page_date = "06 Mai 2022";
 
 include "./include/header.inc.php";
 include "./include/functions.inc.php";

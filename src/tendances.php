@@ -1,6 +1,6 @@
 <?php
 $page_title = "Tendances";
-$page_date = "23/03/22";
+$page_date = "06 Mai 2022";
 
 include "./include/header.inc.php";
 include "./include/functions.inc.php";
@@ -33,8 +33,8 @@ include "./include/functions.inc.php";
             $artists = get_top_artists();
             foreach ($artists as $artist) {
                 
-                $track_name = format_for_link($artist["name"]);
-                $track_display_name = format_for_display($artist["name"]);
+                $artist_name = format_for_link($artist["name"]);
+                $artist_display_name = format_for_display($artist["name"]);
 
                 echo "\t\t\t<article class=\"card\">\n";
                 echo "\t\t\t\t<h3>" . $artist_display_name . "</h3>\n";

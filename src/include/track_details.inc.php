@@ -12,9 +12,6 @@ $track_name = format_for_link($track["name"]);
 
 $artist_display_name = format_for_display($track["artist"]["name"]);
 $artist_name = format_for_link($track["artist"]["name"]);
-
-$album_display_name = format_for_display($track["album"]["title"]);
-$album_name = format_for_link($track["album"]["title"]);
 ?>
 
 		<section>
@@ -22,6 +19,9 @@ $album_name = format_for_link($track["album"]["title"]);
 			<?php
 			// display the album article only if album
 			if (!empty($track["album"])) {
+
+				$album_display_name = format_for_display($track["album"]["title"]);
+				$album_name = format_for_link($track["album"]["title"]);
 
 				echo "<article>\n";
 				echo "\t\t\t\t<h3> Dans l'album " . $album_display_name . "</h3>\n";

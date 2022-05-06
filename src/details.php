@@ -1,6 +1,6 @@
 <?php
 $page_title = "Détails";
-$page_date = "28/03/22";
+$page_date = "06 Mai 2022";
 
 include "./include/header.inc.php";
 include "./include/functions.inc.php";
