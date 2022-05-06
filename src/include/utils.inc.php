@@ -3,7 +3,7 @@
  * File containing specific functions used in the header, footer or for a specific purpose.
  * 
  * @author Lucas L, Benjamin P
- * @version 22.03.23 (WIP)
+ * @version 22.05.06 (1.0.0)
  * @since 23/03/22
  */
 

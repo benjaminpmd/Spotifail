@@ -4,7 +4,7 @@
  * File containing all function to call API from various sources.
  * 
  * @author Lucas L., Benjamin P
- * @version 22.03.23 (WIP)
+ * @version 22.05.06 (1.0.0)
  * @since 23/03/22
  */
 
@@ -231,8 +231,9 @@ function get_top_tracks(): array
 
 	// close the request
 	curl_close($ch);
-
+	
 	$decoded_json = json_decode($res, true);
+
 	return $decoded_json["tracks"]["track"];
 }
 
