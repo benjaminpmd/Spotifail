@@ -18,7 +18,7 @@ $explanation = format_for_display($apod_res["explanation"]);
 			<h2>L'image du jour</h2>
 			<article>
 				<h3>Un peu d'espace</h3>
-				<p>Chez Spotifail, nous adorons le domaine spatiale. Aussi, la NASA (National Aeronautics and Space Administration) propose une image du jour que nous vous proposons de découvrir ici !</p>
+				<p>Chez Spotifail, nous adorons le domaine spatial. Aussi, la NASA (National Aeronautics and Space Administration) propose une image du jour que nous vous proposons de découvrir ici !</p>
 				<figure>
 					<img src="<?php echo $url; ?>" alt="<? echo $title; ?>" />
 					<?php
