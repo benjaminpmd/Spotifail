@@ -40,6 +40,7 @@ if (!isset($page_date) || empty($page_date)) {
 	<meta property="og:description" content="<?php echo $page_description; ?>" />
 	<meta property="og:url" content="https://spotifail.benjaminp.dev" />
 	<meta property="og:site_name" content="Spotifail" />
+	<meta property="og:image" content="https://spotifail.benjaminp.dev/images/spotifail.png" />
 	<title><?php echo $page_title; ?></title>
 
 	<link rel="icon" href="./images/favicon.ico" />

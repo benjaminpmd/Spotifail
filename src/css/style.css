@@ -116,6 +116,13 @@ input[type="submit"] {
     background-color: rgb(145, 0, 0);
     color: #f0f0f0;
     font-family: 'Archivo', sans-serif;
+    transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(255, 3, 3);
+    transition: 0.5s;
 }
 
 /********************

@@ -113,8 +113,15 @@ input[type="submit"] {
     padding: 1%;
     margin: 2%;
     background-color: rgb(200, 0, 0);
-    color: #000000;
+    color: #ffffff;
     font-family: 'Archivo', sans-serif;
+    transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(255, 3, 3);
+    transition: 0.5s;
 }
 
 /********************
