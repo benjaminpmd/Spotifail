@@ -9,7 +9,7 @@ Ce site propose différentes pages dédiées à la consultation d'informations s
 
 ## Lien d'hébergement
 
-Le site est hébergé sur [ce lien](https://spotfail.benjaminp.dev), ou bien [ici](http://llenaert.alwaysdata.net/projet).
+Le site est hébergé sur [ce lien](https://spotifail.benjaminp.dev), ou bien [ici](http://llenaert.alwaysdata.net/projet).
 
 ## Solutions externes utilisées
 
